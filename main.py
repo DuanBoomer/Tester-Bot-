@@ -97,8 +97,8 @@ async def help(cxt):
         color=discord.Color.green(),
     )
     commands = {
-        "&summary": "Get summary of any topic.",
-        "&links": "Get links related to any word, sentence or topic",
+        "&summary <topic>": "Get summary of any topic.",
+        "&links <topic>": "Get links related to any word, sentence or topic",
         "&cats": "Get random cat pics",
         "&dogs": "Get random dog pics",
     }
