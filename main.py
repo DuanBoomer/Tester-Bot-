@@ -94,7 +94,7 @@ async def help(cxt):
     channel = cxt.message.channel
     embed = discord.Embed(
         title="Help Index",
-        color=discord.Color.Green(),
+        color=discord.Color.green(),
     )
     commands = {
         "&summary": "Get summary of any topic.",
