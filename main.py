@@ -78,4 +78,4 @@ async def dogs(cxt):
   for pic in pics:
     await channel.send(pic)
   
-client.run("OTcyMzMyNTU0MTY0MjQ0NTMx.YnXhQQ.bu5ErgLbgxqBABb8SuC49Mvtft4")
+client.run("OTcyMzMyNTU0MTY0MjQ0NTMx.GAZMWb.vQ6fXn45ER-tQgU4XmB17zj9fAeYnuF7J74Om4")
