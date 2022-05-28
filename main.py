@@ -6,10 +6,6 @@ from tldextract import extract
 import requests
 #import json
 
-
-
-
-
 client=commands.Bot(command_prefix = "&")
 @client.event
 async def on_ready():
@@ -60,20 +56,46 @@ async def links(cxt,*args):
 @client.command(pass_context=True)
 async def cats(cxt):
   channel=cxt.message.channel
-  link=requests.get("https://api.thecatapi.com/v1/images/search",
+  pics=[]
+  for i in range(5):
+    link=requests.get("https://api.thecatapi.com/v1/images/search",
                    headers={"x-api-key":"b84b17a0-d0d6-4fec-b7af-eb386e4b34ae"}).json()[0]["url"]
-
-
-  await channel.send(link)
+    pics.append(link)
+  for pic in pics:
+    await channel.send(pic)
 
 @client.command(pass_context=True)
 async def dogs(cxt):
   channel=cxt.message.channel
-  link=requests.get("https://api.thedogapi.com/v1/images/search",
+  pics=[]
+  for i in range(5):
+    link=requests.get("https://api.thedogapi.com/v1/images/search",
                    headers={"x-api-key":"2592ff6f-cd41-4362-a665-b7df356f95c6"}).json()[0]["url"]
+    pics.append(link)
+
+  for pic in pics:
+    await channel.send(pic)
 
 
-  await channel.send(link)
 
+@client.command(pass_context=True)
+async def help(cxt):
+  channel=cxt.message.channel
+  embed=discord.Embed(
+    title="Help Index",
+    color=discord.Color.Green(),
+  )
+  commands={
+    "&summary":"Gives the summary on any topic.",
+    "&links":"Get links related to any topic, sentence or word.",
+    "&cats":"Get random cat pics",
+    "&dogs":"Get random dog pics",
+  }
 
-client.run("OTcyMzMyNTU0MTY0MjQ0NTMx.GkwYsa.uu9UHMz5eMJr0riu0Xd0Nymh3nnmbUwfNfbszs")
+  for key,value in commands.items():
+    embed.add_field(name=key,value=value,inline=True)
+
+  await channel.send(embed=embed)
+
+  
+client.run("OTcyMzMyNTU0MTY0MjQ0NTMx.YnXhQQ.bu5ErgLbgxqBABb8SuC49Mvtft4")
