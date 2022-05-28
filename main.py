@@ -7,6 +7,8 @@ import requests
 #import json
 
 client=commands.Bot(command_prefix = "&")
+client.remove_command("help")
+
 @client.event
 async def on_ready():
   print("Bot is ready to deploy")
@@ -75,27 +77,5 @@ async def dogs(cxt):
 
   for pic in pics:
     await channel.send(pic)
-
-
-
-@client.command(pass_context=True)
-async def help(cxt):
-  channel=cxt.message.channel
-  embed=discord.Embed(
-    title="Help Index",
-    color=discord.Color.Green(),
-  )
-  commands={
-    "&summary":"Gives the summary on any topic.",
-    "&links":"Get links related to any topic, sentence or word.",
-    "&cats":"Get random cat pics",
-    "&dogs":"Get random dog pics",
-  }
-
-  for key,value in commands.items():
-    embed.add_field(name=key,value=value,inline=True)
-
-  await channel.send(embed=embed)
-
   
 client.run("OTcyMzMyNTU0MTY0MjQ0NTMx.YnXhQQ.bu5ErgLbgxqBABb8SuC49Mvtft4")
