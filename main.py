@@ -76,4 +76,4 @@ async def dogs(cxt):
   await channel.send(link)
 
 
-client.run("OTcyMzMyNTU0MTY0MjQ0NTMx.YnXhQQ.bu5ErgLbgxqBABb8SuC49Mvtft4")
+client.run("OTcyMzMyNTU0MTY0MjQ0NTMx.GkwYsa.uu9UHMz5eMJr0riu0Xd0Nymh3nnmbUwfNfbszs")
