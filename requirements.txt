@@ -63,7 +63,7 @@ tldextract==3.3.0
 toml==0.10.2
 tomlkit==0.7.2
 typing-extensions==4.2.0
-ujson==1.35
+ujson==5.4.0
 urllib3==1.26.9
 virtualenv==20.10.0
 webencodings==0.5.1
